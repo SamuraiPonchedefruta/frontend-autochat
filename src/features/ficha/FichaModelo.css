@@ -1,0 +1,97 @@
+.ficha {
+  --fondo: #ffffff;
+  --superficie: #f4f6f8;
+  --texto: #1b1f23;
+  --texto-suave: #5a6570;
+  --acento: #0b5cad;
+  --error: #b3261e;
+
+  box-sizing: border-box;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ficha {
+    --fondo: #121417;
+    --superficie: #1e2227;
+    --texto: #e8eaed;
+    --texto-suave: #a3adb8;
+    --acento: #6cb2f5;
+    --error: #f2b8b5;
+  }
+}
+
+.ficha__marca {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ficha__titulo {
+  margin: 0.25rem 0 1rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.ficha__seccion {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--superficie);
+  border-radius: 0.5rem;
+}
+
+.ficha__subtitulo {
+  margin: 0 0 0.25rem;
+  color: var(--acento);
+  font-size: 1rem;
+}
+
+.ficha__texto {
+  margin: 0;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.ficha__pie {
+  margin-top: 1rem;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+.ficha__estado {
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.ficha__estado--error {
+  color: var(--error);
+}
+
+.ficha__reintentar {
+  display: block;
+  min-height: 2.75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--acento);
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  .ficha {
+    padding: 2rem;
+  }
+}
