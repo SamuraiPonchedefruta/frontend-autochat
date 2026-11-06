@@ -1,0 +1,154 @@
+.comparador {
+  --fondo: #ffffff;
+  --superficie: #f4f6f8;
+  --borde: #d5dbe1;
+  --texto: #1b1f23;
+  --texto-suave: #5a6570;
+  --acento: #0b5cad;
+  --error: #b3261e;
+
+  box-sizing: border-box;
+  max-width: 60rem;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comparador {
+    --fondo: #121417;
+    --superficie: #1e2227;
+    --borde: #353c44;
+    --texto: #e8eaed;
+    --texto-suave: #a3adb8;
+    --acento: #6cb2f5;
+    --error: #f2b8b5;
+  }
+}
+
+.comparador__titulo {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.comparador__estado {
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.comparador__estado--error {
+  color: var(--error);
+}
+
+.comparador__reintentar {
+  display: block;
+  min-height: 2.75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--acento);
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.comparador__solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* El scroll horizontal vive aquí: la página nunca se desborda. */
+.comparador__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--borde);
+  border-radius: 0.5rem;
+}
+
+.comparador__scroll:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+.comparador__tabla {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.comparador__celda,
+.comparador__fila-titulo,
+.comparador__esquina {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparador__celda {
+  min-width: 11rem;
+  max-width: 14rem;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+
+/* Columna de títulos fija mientras se desliza. */
+.comparador__fila-titulo,
+.comparador__esquina {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 6.5rem;
+  min-width: 6.5rem;
+  background: var(--superficie);
+  color: var(--acento);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-right: 1px solid var(--borde);
+}
+
+.comparador__modelo {
+  background: var(--superficie);
+}
+
+.comparador__marca,
+.comparador__nombre {
+  display: block;
+}
+
+.comparador__marca {
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.comparador__nombre {
+  font-size: 1.125rem;
+}
+
+.comparador__fuente {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 40rem) {
+  .comparador {
+    padding: 2rem;
+  }
+}
