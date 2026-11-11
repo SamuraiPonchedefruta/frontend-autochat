@@ -1,0 +1,89 @@
+.calculadora {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.calculadora__titulo {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.calculadora__etiqueta {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.calculadora__selector {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calculadora__estado {
+  color: #555;
+}
+
+.calculadora__estado--error {
+  color: #b00020;
+}
+
+.calculadora__reintentar {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.calculadora__modelo {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.calculadora__rubros {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.calculadora__rubro {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.calculadora__rubro-monto {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.calculadora__total {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+}
+
+.calculadora__fecha {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.calculadora__bloque {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: #f6f6f6;
+  border-radius: 8px;
+}
+
+.calculadora__subtitulo {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.calculadora__limitaciones {
+  margin: 0;
+  padding-left: 1.2rem;
+}
