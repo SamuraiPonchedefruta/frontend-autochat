@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { calcularTco } from './calculadoraApi';
+import GuardarCalculo from './GuardarCalculo';
 import DesgloseTco from './DesgloseTco';
 import SupuestosForm, { SUPUESTOS_INICIALES, validarSupuestos } from './SupuestosForm';
 import './Calculadora.css';
@@ -31,7 +32,7 @@ export default function Calculadora({ modelos = [], anioDefault = 2026, horizont
       };
 
       calcularTco(payload, { signal: controlador.signal })
-        .then((respuesta) => setEstado({ fase: 'listo', datos: respuesta }))
+        .then((respuesta) => setEstado({ fase: 'listo', datos: respuesta, payload }))
         .catch((error) => {
           if (error.name === 'AbortError') return;
           setEstado((previo) => ({ fase: 'error', error, datos: previo.datos }));
@@ -112,6 +113,7 @@ export default function Calculadora({ modelos = [], anioDefault = 2026, horizont
       )}
 
       {datos && !errorGeneral && <DesgloseTco datos={datos} />}
+      {fase === 'listo' && estado.payload && <GuardarCalculo payload={estado.payload} />}
     </main>
   );
-}
+  }
